@@ -1,0 +1,969 @@
+[
+    {
+        "id": "AAAA1111-BBBB-2222-CCCC-3333DDDDEEEE",
+        "name": "iOS System",
+        "backgroundHex": "#F2F2F7",
+        "textHex": "#000000",
+        "buttonBackgroundHex": "#FFFFFF",
+        "buttonTextHex": "#000000",
+        "accentHex": "#007AFF"
+    },
+    {
+        "id": "BBBB2222-CCCC-3333-DDDD-4444EEEFFFFF",
+        "name": "iOS System Dark",
+        "backgroundHex": "#1C1C1E",
+        "textHex": "#FFFFFF",
+        "buttonBackgroundHex": "#2C2C2E",
+        "buttonTextHex": "#FFFFFF",
+        "accentHex": "#0A84FF"
+    },
+    {
+        "id": "E51915B4-59CC-4C8E-A828-722623C8DD3D",
+        "name": "Classic Light",
+        "backgroundHex": "#FFFFFF",
+        "textHex": "#000000",
+        "buttonBackgroundHex": "#E0E0E0",
+        "buttonTextHex": "#000000",
+        "accentHex": "#007AFF"
+    },
+    {
+        "id": "5ADDA622-21AF-4FD4-8CF1-DAE13A8840C9",
+        "name": "Classic Dark",
+        "backgroundHex": "#000000",
+        "textHex": "#FFFFFF",
+        "buttonBackgroundHex": "#4D4D4D",
+        "buttonTextHex": "#FFFFFF",
+        "accentHex": "#FF9500"
+    },
+    {
+        "id": "58C92342-8C34-4F3A-A385-36C013D58C28",
+        "name": "Ocean",
+        "backgroundHex": "#002B5B",
+        "textHex": "#FFFFFF",
+        "buttonBackgroundHex": "#0277BD",
+        "buttonTextHex": "#FFFFFF",
+        "accentHex": "#00E5FF"
+    },
+    {
+        "id": "1B412B4F-0433-45FD-9F8C-3448ED9A7A1E",
+        "name": "Lemon",
+        "backgroundHex": "#FFFDE7",
+        "textHex": "#000000",
+        "buttonBackgroundHex": "#FFD54F",
+        "buttonTextHex": "#000000",
+        "accentHex": "#76FF03"
+    },
+    {
+        "id": "F7313C63-3CFA-49AB-8655-8AA1DE5ACB58",
+        "name": "Neon",
+        "backgroundHex": "#000000",
+        "textHex": "#39FF14",
+        "buttonBackgroundHex": "#8000FF",
+        "buttonTextHex": "#FFFFFF",
+        "accentHex": "#FF00FF"
+    },
+    {
+        "id": "B35F2872-6E5E-4C2D-A32B-C4DDBB8727FB",
+        "name": "Sunset",
+        "backgroundHex": "#FF7043",
+        "textHex": "#FFFFFF",
+        "buttonBackgroundHex": "#FFAB91",
+        "buttonTextHex": "#000000",
+        "accentHex": "#FFD600"
+    },
+    {
+        "id": "EBF7A18A-2B46-43C9-AE0C-1C71D43AE52C",
+        "name": "Mint",
+        "backgroundHex": "#E0F2F1",
+        "textHex": "#004D40",
+        "buttonBackgroundHex": "#80CBC4",
+        "buttonTextHex": "#004D40",
+        "accentHex": "#00ACC1"
+    },
+    {
+        "id": "6F4C781A-C6BE-4D54-AF71-66E67F8E6722",
+        "name": "Rose",
+        "backgroundHex": "#FCE4EC",
+        "textHex": "#880E4F",
+        "buttonBackgroundHex": "#F48FB1",
+        "buttonTextHex": "#880E4F",
+        "accentHex": "#E91E63"
+    },
+    {
+        "id": "8AB2354C-A5D8-4E45-A2D6-C42E6C95F91D",
+        "name": "Lavender",
+        "backgroundHex": "#EDE7F6",
+        "textHex": "#4A148C",
+        "buttonBackgroundHex": "#B39DDB",
+        "buttonTextHex": "#4A148C",
+        "accentHex": "#7E57C2"
+    },
+    {
+        "id": "F44D5D36-6793-4D31-A7A0-1AFBDA3C7720",
+        "name": "Forest",
+        "backgroundHex": "#E8F5E9",
+        "textHex": "#1B5E20",
+        "buttonBackgroundHex": "#A5D6A7",
+        "buttonTextHex": "#1B5E20",
+        "accentHex": "#43A047"
+    },
+    {
+        "id": "A5BD36D2-3DEB-4FD3-BA24-25C205416FC5",
+        "name": "Sky",
+        "backgroundHex": "#E1F5FE",
+        "textHex": "#01579B",
+        "buttonBackgroundHex": "#81D4FA",
+        "buttonTextHex": "#01579B",
+        "accentHex": "#0288D1"
+    },
+    {
+        "id": "E9B5FA6A-8E07-4F17-B56F-13C2799C8B12",
+        "name": "Cocoa",
+        "backgroundHex": "#EFEBE9",
+        "textHex": "#3E2723",
+        "buttonBackgroundHex": "#BCAAA4",
+        "buttonTextHex": "#3E2723",
+        "accentHex": "#8D6E63"
+    },
+    {
+        "id": "18D7A8B3-431B-45AB-87F6-1A2C6E442E93",
+        "name": "Peach",
+        "backgroundHex": "#FFF3E0",
+        "textHex": "#E65100",
+        "buttonBackgroundHex": "#FFCC80",
+        "buttonTextHex": "#E65100",
+        "accentHex": "#FF9800"
+    },
+    {
+        "id": "7A9E4F84-F956-4744-BC63-33EB98C7AB7A",
+        "name": "Ice",
+        "backgroundHex": "#E0F7FA",
+        "textHex": "#006064",
+        "buttonBackgroundHex": "#80DEEA",
+        "buttonTextHex": "#006064",
+        "accentHex": "#00ACC1"
+    },
+    {
+        "id": "CD23BB28-296E-4F48-A92E-0F5C3855A551",
+        "name": "Plum",
+        "backgroundHex": "#F3E5F5",
+        "textHex": "#4A148C",
+        "buttonBackgroundHex": "#CE93D8",
+        "buttonTextHex": "#4A148C",
+        "accentHex": "#9C27B0"
+    },
+    {
+        "id": "11111111-1111-1111-1111-111111111111",
+        "name": "Classic Light",
+        "background": {
+            "type": "solid",
+            "colors": [
+                "#FFFFFF"
+            ]
+        },
+        "textHex": "#000000",
+        "buttonBackgroundHex": "#E0E0E0",
+        "buttonTextHex": "#000000",
+        "accentHex": "#007AFF"
+    },
+    {
+        "id": "22222222-2222-2222-2222-222222222222",
+        "name": "Sky Gradient",
+        "background": {
+            "type": "linear",
+            "colors": [
+                "#2196F3",
+                "#21CBF3"
+            ]
+        },
+        "textHex": "#FFFFFF",
+        "buttonBackgroundHex": "#90CAF9",
+        "buttonTextHex": "#000000",
+        "accentHex": "#FFEB3B"
+    },
+    {
+        "id": "33333333-3333-3333-3333-333333333333",
+        "name": "Sun Burst",
+        "background": {
+            "type": "radial",
+            "colors": [
+                "#FFEB3B",
+                "#FF9800",
+                "#F44336"
+            ]
+        },
+        "textHex": "#000000",
+        "buttonBackgroundHex": "#FFF59D",
+        "buttonTextHex": "#000000",
+        "accentHex": "#E91E63"
+    },
+    {
+        "id": "A11B2233-4455-6677-8899-AABBCCDDEE01",
+        "name": "Coral",
+        "backgroundHex": "#FFCDD2",
+        "textHex": "#B71C1C",
+        "buttonBackgroundHex": "#EF9A9A",
+        "buttonTextHex": "#B71C1C",
+        "accentHex": "#D32F2F"
+    },
+    {
+        "id": "A11B2233-4455-6677-8899-AABBCCDDEE02",
+        "name": "Amber",
+        "backgroundHex": "#FFF8E1",
+        "textHex": "#E65100",
+        "buttonBackgroundHex": "#FFE082",
+        "buttonTextHex": "#E65100",
+        "accentHex": "#FF6F00"
+    },
+    {
+        "id": "A11B2233-4455-6677-8899-AABBCCDDEE03",
+        "name": "Azure",
+        "backgroundHex": "#E3F2FD",
+        "textHex": "#0D47A1",
+        "buttonBackgroundHex": "#90CAF9",
+        "buttonTextHex": "#0D47A1",
+        "accentHex": "#1976D2"
+    },
+    {
+        "id": "A11B2233-4455-6677-8899-AABBCCDDEE04",
+        "name": "Emerald",
+        "backgroundHex": "#E8F5E9",
+        "textHex": "#1B5E20",
+        "buttonBackgroundHex": "#A5D6A7",
+        "buttonTextHex": "#1B5E20",
+        "accentHex": "#2E7D32"
+    },
+    {
+        "id": "A11B2233-4455-6677-8899-AABBCCDDEE05",
+        "name": "Slate",
+        "backgroundHex": "#ECEFF1",
+        "textHex": "#263238",
+        "buttonBackgroundHex": "#B0BEC5",
+        "buttonTextHex": "#263238",
+        "accentHex": "#455A64"
+    },
+    {
+        "id": "A11B2233-4455-6677-8899-AABBCCDDEE06",
+        "name": "Berry",
+        "backgroundHex": "#FCE4EC",
+        "textHex": "#880E4F",
+        "buttonBackgroundHex": "#F48FB1",
+        "buttonTextHex": "#880E4F",
+        "accentHex": "#C2185B"
+    },
+    {
+        "id": "A11B2233-4455-6677-8899-AABBCCDDEE07",
+        "name": "Denim",
+        "backgroundHex": "#E3F2FD",
+        "textHex": "#0D47A1",
+        "buttonBackgroundHex": "#64B5F6",
+        "buttonTextHex": "#0D47A1",
+        "accentHex": "#1565C0"
+    },
+    {
+        "id": "A11B2233-4455-6677-8899-AABBCCDDEE08",
+        "name": "Sand",
+        "backgroundHex": "#FFFDE7",
+        "textHex": "#795548",
+        "buttonBackgroundHex": "#FFF59D",
+        "buttonTextHex": "#795548",
+        "accentHex": "#A1887F"
+    },
+    {
+        "id": "A11B2233-4455-6677-8899-AABBCCDDEE09",
+        "name": "Midnight",
+        "backgroundHex": "#263238",
+        "textHex": "#ECEFF1",
+        "buttonBackgroundHex": "#455A64",
+        "buttonTextHex": "#ECEFF1",
+        "accentHex": "#90A4AE"
+    },
+    {
+        "id": "A11B2233-4455-6677-8899-AABBCCDDEE0A",
+        "name": "Flamingo",
+        "backgroundHex": "#F8BBD0",
+        "textHex": "#880E4F",
+        "buttonBackgroundHex": "#F48FB1",
+        "buttonTextHex": "#880E4F",
+        "accentHex": "#EC407A"
+    },
+    {
+        "id": "99911111-AAAA-BBBB-CCCC-DDDDEE110001",
+        "name": "Aurora",
+        "background": {
+            "type": "linear",
+            "colors": [
+                "#7F00FF",
+                "#E100FF",
+                "#00FFFF"
+            ]
+        },
+        "textHex": "#FFFFFF",
+        "buttonBackgroundHex": "#BA68C8",
+        "buttonTextHex": "#FFFFFF",
+        "accentHex": "#00E5FF"
+    },
+    {
+        "id": "99911111-AAAA-BBBB-CCCC-DDDDEE110002",
+        "name": "Sunrise",
+        "background": {
+            "type": "linear",
+            "colors": [
+                "#FF512F",
+                "#F09819"
+            ]
+        },
+        "textHex": "#FFFFFF",
+        "buttonBackgroundHex": "#FFB74D",
+        "buttonTextHex": "#000000",
+        "accentHex": "#FFEB3B"
+    },
+    {
+        "id": "99911111-AAAA-BBBB-CCCC-DDDDEE110003",
+        "name": "Deep Space",
+        "background": {
+            "type": "radial",
+            "colors": [
+                "#0F2027",
+                "#203A43",
+                "#2C5364"
+            ]
+        },
+        "textHex": "#FFFFFF",
+        "buttonBackgroundHex": "#546E7A",
+        "buttonTextHex": "#FFFFFF",
+        "accentHex": "#80DEEA"
+    },
+    {
+        "id": "99911111-AAAA-BBBB-CCCC-DDDDEE110004",
+        "name": "Candy",
+        "background": {
+            "type": "linear",
+            "colors": [
+                "#FF9A9E",
+                "#FAD0C4"
+            ]
+        },
+        "textHex": "#880E4F",
+        "buttonBackgroundHex": "#F8BBD0",
+        "buttonTextHex": "#880E4F",
+        "accentHex": "#EC407A"
+    },
+    {
+        "id": "99911111-AAAA-BBBB-CCCC-DDDDEE110005",
+        "name": "Tropical",
+        "background": {
+            "type": "radial",
+            "colors": [
+                "#00C9FF",
+                "#92FE9D"
+            ]
+        },
+        "textHex": "#004D40",
+        "buttonBackgroundHex": "#80CBC4",
+        "buttonTextHex": "#004D40",
+        "accentHex": "#00ACC1"
+    },
+    {
+        "id": "D001AA11-BB22-CC33-DD44-EE55FF667701",
+        "name": "Arctic",
+        "backgroundHex": "#F0F8FF",
+        "textHex": "#003366",
+        "buttonBackgroundHex": "#B3E5FC",
+        "buttonTextHex": "#003366",
+        "accentHex": "#0288D1"
+    },
+    {
+        "id": "D001AA11-BB22-CC33-DD44-EE55FF667702",
+        "name": "Solar",
+        "background": {
+            "type": "linear",
+            "colors": [
+                "#FFB300",
+                "#FF7043"
+            ]
+        },
+        "textHex": "#FFFFFF",
+        "buttonBackgroundHex": "#FFCC80",
+        "buttonTextHex": "#000000",
+        "accentHex": "#FF6F00"
+    },
+    {
+        "id": "D001AA11-BB22-CC33-DD44-EE55FF667703",
+        "name": "Galaxy",
+        "background": {
+            "type": "radial",
+            "colors": [
+                "#0D0D2B",
+                "#3F0071",
+                "#120052"
+            ]
+        },
+        "textHex": "#E0E0E0",
+        "buttonBackgroundHex": "#512DA8",
+        "buttonTextHex": "#FFFFFF",
+        "accentHex": "#7C4DFF"
+    },
+    {
+        "id": "D001AA11-BB22-CC33-DD44-EE55FF667704",
+        "name": "Flare",
+        "backgroundHex": "#FFF3E0",
+        "textHex": "#BF360C",
+        "buttonBackgroundHex": "#FFAB91",
+        "buttonTextHex": "#BF360C",
+        "accentHex": "#FF5722"
+    },
+    {
+        "id": "D001AA11-BB22-CC33-DD44-EE55FF667705",
+        "name": "Cyberpunk",
+        "backgroundHex": "#0D0D0D",
+        "textHex": "#00FFE5",
+        "buttonBackgroundHex": "#FF00A0",
+        "buttonTextHex": "#FFFFFF",
+        "accentHex": "#39FF14"
+    },
+    {
+        "id": "D001AA11-BB22-CC33-DD44-EE55FF667706",
+        "name": "Amber Night",
+        "background": {
+            "type": "linear",
+            "colors": [
+                "#3E2723",
+                "#5D4037",
+                "#795548"
+            ]
+        },
+        "textHex": "#FFECB3",
+        "buttonBackgroundHex": "#A1887F",
+        "buttonTextHex": "#FFECB3",
+        "accentHex": "#FF9800"
+    },
+    {
+        "id": "D001AA11-BB22-CC33-DD44-EE55FF667707",
+        "name": "Aurora Ice",
+        "background": {
+            "type": "linear",
+            "colors": [
+                "#00C9FF",
+                "#92FE9D",
+                "#B2FEFA"
+            ]
+        },
+        "textHex": "#00332E",
+        "buttonBackgroundHex": "#A7FFEB",
+        "buttonTextHex": "#00332E",
+        "accentHex": "#00ACC1"
+    },
+    {
+        "id": "D001AA11-BB22-CC33-DD44-EE55FF667708",
+        "name": "Royal",
+        "backgroundHex": "#1A237E",
+        "textHex": "#E8EAF6",
+        "buttonBackgroundHex": "#3949AB",
+        "buttonTextHex": "#E8EAF6",
+        "accentHex": "#536DFE"
+    },
+    {
+        "id": "D001AA11-BB22-CC33-DD44-EE55FF667709",
+        "name": "Cherry Blossom",
+        "backgroundHex": "#FCE4EC",
+        "textHex": "#AD1457",
+        "buttonBackgroundHex": "#F8BBD0",
+        "buttonTextHex": "#AD1457",
+        "accentHex": "#EC407A"
+    },
+    {
+        "id": "D001AA11-BB22-CC33-DD44-EE55FF66770A",
+        "name": "Steel",
+        "backgroundHex": "#ECEFF1",
+        "textHex": "#263238",
+        "buttonBackgroundHex": "#90A4AE",
+        "buttonTextHex": "#263238",
+        "accentHex": "#607D8B"
+    },
+    {
+        "id": "E1000000-AAAA-BBBB-CCCC-DDDD11110001",
+        "name": "Volcano",
+        "backgroundHex": "#3E2723",
+        "textHex": "#FFFFFF",
+        "buttonBackgroundHex": "#E64A19",
+        "buttonTextHex": "#FFFFFF",
+        "accentHex": "#FF3D00"
+    },
+    {
+        "id": "E1000000-AAAA-BBBB-CCCC-DDDD11110002",
+        "name": "Aurora Borealis",
+        "background": {
+            "type": "linear",
+            "colors": [
+                "#0F2027",
+                "#203A43",
+                "#2C5364"
+            ]
+        },
+        "textHex": "#FFFFFF",
+        "buttonBackgroundHex": "#4DD0E1",
+        "buttonTextHex": "#FFFFFF",
+        "accentHex": "#00E5FF"
+    },
+    {
+        "id": "E1000000-AAAA-BBBB-CCCC-DDDD11110003",
+        "name": "Sakura",
+        "backgroundHex": "#FFF0F5",
+        "textHex": "#880E4F",
+        "buttonBackgroundHex": "#F8BBD0",
+        "buttonTextHex": "#880E4F",
+        "accentHex": "#EC407A"
+    },
+    {
+        "id": "E1000000-AAAA-BBBB-CCCC-DDDD11110004",
+        "name": "Emerald Night",
+        "backgroundHex": "#004D40",
+        "textHex": "#E0F2F1",
+        "buttonBackgroundHex": "#00796B",
+        "buttonTextHex": "#E0F2F1",
+        "accentHex": "#00E676"
+    },
+    {
+        "id": "E1000000-AAAA-BBBB-CCCC-DDDD11110005",
+        "name": "Gold & Ivory",
+        "backgroundHex": "#FFF8E1",
+        "textHex": "#5D4037",
+        "buttonBackgroundHex": "#FFD54F",
+        "buttonTextHex": "#5D4037",
+        "accentHex": "#FFC107"
+    },
+    {
+        "id": "E1000000-AAAA-BBBB-CCCC-DDDD11110006",
+        "name": "Cyber Blue",
+        "backgroundHex": "#0D1117",
+        "textHex": "#58A6FF",
+        "buttonBackgroundHex": "#1F6FEB",
+        "buttonTextHex": "#FFFFFF",
+        "accentHex": "#79C0FF"
+    },
+    {
+        "id": "E1000000-AAAA-BBBB-CCCC-DDDD11110007",
+        "name": "Magenta Pulse",
+        "background": {
+            "type": "radial",
+            "colors": [
+                "#FF00FF",
+                "#FF4081"
+            ]
+        },
+        "textHex": "#FFFFFF",
+        "buttonBackgroundHex": "#F50057",
+        "buttonTextHex": "#FFFFFF",
+        "accentHex": "#FF80AB"
+    },
+    {
+        "id": "E1000000-AAAA-BBBB-CCCC-DDDD11110008",
+        "name": "Frostbite",
+        "backgroundHex": "#E0F7FA",
+        "textHex": "#004D40",
+        "buttonBackgroundHex": "#4DD0E1",
+        "buttonTextHex": "#004D40",
+        "accentHex": "#00BCD4"
+    },
+    {
+        "id": "E1000000-AAAA-BBBB-CCCC-DDDD11110009",
+        "name": "Amethyst",
+        "backgroundHex": "#311B92",
+        "textHex": "#EDE7F6",
+        "buttonBackgroundHex": "#4527A0",
+        "buttonTextHex": "#EDE7F6",
+        "accentHex": "#7E57C2"
+    },
+    {
+        "id": "E1000000-AAAA-BBBB-CCCC-DDDD1111000A",
+        "name": "Lime Pop",
+        "backgroundHex": "#F9FBE7",
+        "textHex": "#33691E",
+        "buttonBackgroundHex": "#C6FF00",
+        "buttonTextHex": "#33691E",
+        "accentHex": "#AEEA00"
+    },
+    {
+        "id": "E2000000-AAAA-BBBB-CCCC-DDDD22220001",
+        "name": "Onyx",
+        "backgroundHex": "#000000",
+        "textHex": "#FFFFFF",
+        "buttonBackgroundHex": "#212121",
+        "buttonTextHex": "#FFFFFF",
+        "accentHex": "#FF1744"
+    },
+    {
+        "id": "E2000000-AAAA-BBBB-CCCC-DDDD22220002",
+        "name": "Arctic Night",
+        "backgroundHex": "#0B3D91",
+        "textHex": "#E1F5FE",
+        "buttonBackgroundHex": "#1976D2",
+        "buttonTextHex": "#E1F5FE",
+        "accentHex": "#81D4FA"
+    },
+    {
+        "id": "E2000000-AAAA-BBBB-CCCC-DDDD22220003",
+        "name": "Solar Flare",
+        "background": {
+            "type": "linear",
+            "colors": [
+                "#FF5722",
+                "#FFC107"
+            ]
+        },
+        "textHex": "#000000",
+        "buttonBackgroundHex": "#FF8A65",
+        "buttonTextHex": "#000000",
+        "accentHex": "#FFEB3B"
+    },
+    {
+        "id": "E2000000-AAAA-BBBB-CCCC-DDDD22220004",
+        "name": "Deep Sea",
+        "backgroundHex": "#001F3F",
+        "textHex": "#7FDBFF",
+        "buttonBackgroundHex": "#0074D9",
+        "buttonTextHex": "#FFFFFF",
+        "accentHex": "#39CCCC"
+    },
+    {
+        "id": "E2000000-AAAA-BBBB-CCCC-DDDD22220005",
+        "name": "Ruby",
+        "backgroundHex": "#880000",
+        "textHex": "#FFFFFF",
+        "buttonBackgroundHex": "#C62828",
+        "buttonTextHex": "#FFFFFF",
+        "accentHex": "#FF5252"
+    },
+    {
+        "id": "E2000000-AAAA-BBBB-CCCC-DDDD22220006",
+        "name": "Emerald Dream",
+        "background": {
+            "type": "radial",
+            "colors": [
+                "#004D40",
+                "#00796B",
+                "#00BCD4"
+            ]
+        },
+        "textHex": "#E0F2F1",
+        "buttonBackgroundHex": "#26A69A",
+        "buttonTextHex": "#E0F2F1",
+        "accentHex": "#00E676"
+    },
+    {
+        "id": "E2000000-AAAA-BBBB-CCCC-DDDD22220007",
+        "name": "Rose Gold",
+        "backgroundHex": "#FCE4EC",
+        "textHex": "#6A1B9A",
+        "buttonBackgroundHex": "#F8BBD0",
+        "buttonTextHex": "#6A1B9A",
+        "accentHex": "#D81B60"
+    },
+    {
+        "id": "E2000000-AAAA-BBBB-CCCC-DDDD22220008",
+        "name": "Cobalt",
+        "backgroundHex": "#002171",
+        "textHex": "#E3F2FD",
+        "buttonBackgroundHex": "#1565C0",
+        "buttonTextHex": "#E3F2FD",
+        "accentHex": "#42A5F5"
+    },
+    {
+        "id": "E2000000-AAAA-BBBB-CCCC-DDDD22220009",
+        "name": "Sunflower",
+        "backgroundHex": "#FFFDE7",
+        "textHex": "#F57F17",
+        "buttonBackgroundHex": "#FFEE58",
+        "buttonTextHex": "#F57F17",
+        "accentHex": "#FFD600"
+    },
+    {
+        "id": "E2000000-AAAA-BBBB-CCCC-DDDD2222000A",
+        "name": "Graphite",
+        "backgroundHex": "#1C1C1C",
+        "textHex": "#E0E0E0",
+        "buttonBackgroundHex": "#424242",
+        "buttonTextHex": "#E0E0E0",
+        "accentHex": "#BDBDBD"
+    },
+    {
+        "id": "E2000000-AAAA-BBBB-CCCC-DDDD2222000B",
+        "name": "Velvet",
+        "backgroundHex": "#4A148C",
+        "textHex": "#F3E5F5",
+        "buttonBackgroundHex": "#6A1B9A",
+        "buttonTextHex": "#F3E5F5",
+        "accentHex": "#AB47BC"
+    },
+    {
+        "id": "E2000000-AAAA-BBBB-CCCC-DDDD2222000C",
+        "name": "Minty Fresh",
+        "backgroundHex": "#E0F2F1",
+        "textHex": "#004D40",
+        "buttonBackgroundHex": "#80CBC4",
+        "buttonTextHex": "#004D40",
+        "accentHex": "#1DE9B6"
+    },
+    {
+        "id": "E2000000-AAAA-BBBB-CCCC-DDDD2222000D",
+        "name": "Desert",
+        "backgroundHex": "#FBE9E7",
+        "textHex": "#5D4037",
+        "buttonBackgroundHex": "#FFCCBC",
+        "buttonTextHex": "#5D4037",
+        "accentHex": "#8D6E63"
+    },
+    {
+        "id": "E2000000-AAAA-BBBB-CCCC-DDDD2222000E",
+        "name": "Teal Dream",
+        "background": {
+            "type": "linear",
+            "colors": [
+                "#004D40",
+                "#00796B",
+                "#26A69A"
+            ]
+        },
+        "textHex": "#E0F2F1",
+        "buttonBackgroundHex": "#4DB6AC",
+        "buttonTextHex": "#E0F2F1",
+        "accentHex": "#1DE9B6"
+    },
+    {
+        "id": "E2000000-AAAA-BBBB-CCCC-DDDD2222000F",
+        "name": "Flaming Sunset",
+        "background": {
+            "type": "radial",
+            "colors": [
+                "#FF512F",
+                "#DD2476"
+            ]
+        },
+        "textHex": "#FFFFFF",
+        "buttonBackgroundHex": "#F06292",
+        "buttonTextHex": "#FFFFFF",
+        "accentHex": "#FF4081"
+    },
+    {
+        "id": "E3000000-AAAA-BBBB-CCCC-DDDD33330001",
+        "name": "Neon Night",
+        "backgroundHex": "#0F0F0F",
+        "textHex": "#39FF14",
+        "buttonBackgroundHex": "#8000FF",
+        "buttonTextHex": "#FFFFFF",
+        "accentHex": "#FF00FF"
+    },
+    {
+        "id": "E3000000-AAAA-BBBB-CCCC-DDDD33330002",
+        "name": "Candy Pop",
+        "backgroundHex": "#F8BBD0",
+        "textHex": "#880E4F",
+        "buttonBackgroundHex": "#FF80AB",
+        "buttonTextHex": "#880E4F",
+        "accentHex": "#EC407A"
+    },
+    {
+        "id": "E3000000-AAAA-BBBB-CCCC-DDDD33330003",
+        "name": "Emerald Sea",
+        "background": {
+            "type": "linear",
+            "colors": [
+                "#004D40",
+                "#00796B",
+                "#26A69A"
+            ]
+        },
+        "textHex": "#E0F2F1",
+        "buttonBackgroundHex": "#009688",
+        "buttonTextHex": "#E0F2F1",
+        "accentHex": "#00E676"
+    },
+    {
+        "id": "E3000000-AAAA-BBBB-CCCC-DDDD33330004",
+        "name": "Deep Purple",
+        "backgroundHex": "#311B92",
+        "textHex": "#EDE7F6",
+        "buttonBackgroundHex": "#512DA8",
+        "buttonTextHex": "#EDE7F6",
+        "accentHex": "#9575CD"
+    },
+    {
+        "id": "E3000000-AAAA-BBBB-CCCC-DDDD33330005",
+        "name": "Sunset Glow",
+        "background": {
+            "type": "radial",
+            "colors": [
+                "#FF7043",
+                "#FFAB91",
+                "#FFD180"
+            ]
+        },
+        "textHex": "#FFFFFF",
+        "buttonBackgroundHex": "#FF8A65",
+        "buttonTextHex": "#FFFFFF",
+        "accentHex": "#FFCCBC"
+    },
+    {
+        "id": "E3000000-AAAA-BBBB-CCCC-DDDD33330006",
+        "name": "Tropical Punch",
+        "background": {
+            "type": "linear",
+            "colors": [
+                "#FF6F61",
+                "#DE1F8A",
+                "#6B0F1A"
+            ]
+        },
+        "textHex": "#FFFFFF",
+        "buttonBackgroundHex": "#E91E63",
+        "buttonTextHex": "#FFFFFF",
+        "accentHex": "#F50057"
+    },
+    {
+        "id": "E3000000-AAAA-BBBB-CCCC-DDDD33330007",
+        "name": "Cyber Lime",
+        "backgroundHex": "#000000",
+        "textHex": "#C6FF00",
+        "buttonBackgroundHex": "#212121",
+        "buttonTextHex": "#C6FF00",
+        "accentHex": "#76FF03"
+    },
+    {
+        "id": "E3000000-AAAA-BBBB-CCCC-DDDD33330008",
+        "name": "Ocean Mist",
+        "backgroundHex": "#E0F7FA",
+        "textHex": "#004D40",
+        "buttonBackgroundHex": "#80DEEA",
+        "buttonTextHex": "#004D40",
+        "accentHex": "#26C6DA"
+    },
+    {
+        "id": "E3000000-AAAA-BBBB-CCCC-DDDD33330009",
+        "name": "Cherry Night",
+        "backgroundHex": "#880E4F",
+        "textHex": "#FFFFFF",
+        "buttonBackgroundHex": "#AD1457",
+        "buttonTextHex": "#FFFFFF",
+        "accentHex": "#EC407A"
+    },
+    {
+        "id": "E3000000-AAAA-BBBB-CCCC-DDDD3333000A",
+        "name": "Ghost",
+        "backgroundHex": "#F5F5F5",
+        "textHex": "#212121",
+        "buttonBackgroundHex": "#E0E0E0",
+        "buttonTextHex": "#212121",
+        "accentHex": "#9E9E9E"
+    },
+    {
+        "id": "E3000000-AAAA-BBBB-CCCC-DDDD3333000B",
+        "name": "Charcoal",
+        "backgroundHex": "#121212",
+        "textHex": "#E0E0E0",
+        "buttonBackgroundHex": "#1F1F1F",
+        "buttonTextHex": "#E0E0E0",
+        "accentHex": "#757575"
+    },
+    {
+        "id": "E3000000-AAAA-BBBB-CCCC-DDDD3333000C",
+        "name": "Coral Sunset",
+        "backgroundHex": "#FF7043",
+        "textHex": "#FFFFFF",
+        "buttonBackgroundHex": "#FF8A65",
+        "buttonTextHex": "#FFFFFF",
+        "accentHex": "#FFAB91"
+    },
+    {
+        "id": "E3000000-AAAA-BBBB-CCCC-DDDD3333000D",
+        "name": "Steel Blue",
+        "backgroundHex": "#1E3A5F",
+        "textHex": "#E1F5FE",
+        "buttonBackgroundHex": "#3F51B5",
+        "buttonTextHex": "#E1F5FE",
+        "accentHex": "#64B5F6"
+    },
+    {
+        "id": "E3000000-AAAA-BBBB-CCCC-DDDD3333000E",
+        "name": "Peony",
+        "backgroundHex": "#F8BBD0",
+        "textHex": "#4A148C",
+        "buttonBackgroundHex": "#E1BEE7",
+        "buttonTextHex": "#4A148C",
+        "accentHex": "#D500F9"
+    },
+    {
+        "id": "E3000000-AAAA-BBBB-CCCC-DDDD3333000F",
+        "name": "Velvet Red",
+        "backgroundHex": "#B71C1C",
+        "textHex": "#FFFFFF",
+        "buttonBackgroundHex": "#C62828",
+        "buttonTextHex": "#FFFFFF",
+        "accentHex": "#FF5252"
+    },
+    {
+        "id": "E3000000-AAAA-BBBB-CCCC-DDDD33330010",
+        "name": "Jungle",
+        "backgroundHex": "#1B5E20",
+        "textHex": "#E8F5E9",
+        "buttonBackgroundHex": "#388E3C",
+        "buttonTextHex": "#E8F5E9",
+        "accentHex": "#69F0AE"
+    },
+    {
+        "id": "E3000000-AAAA-BBBB-CCCC-DDDD33330011",
+        "name": "Aqua Glow",
+        "background": {
+            "type": "linear",
+            "colors": [
+                "#00FFFF",
+                "#00CED1",
+                "#008B8B"
+            ]
+        },
+        "textHex": "#FFFFFF",
+        "buttonBackgroundHex": "#00BCD4",
+        "buttonTextHex": "#FFFFFF",
+        "accentHex": "#4DD0E1"
+    },
+    {
+        "id": "E3000000-AAAA-BBBB-CCCC-DDDD33330012",
+        "name": "Solar Pink",
+        "background": {
+            "type": "radial",
+            "colors": [
+                "#FF0099",
+                "#FF5F6D"
+            ]
+        },
+        "textHex": "#FFFFFF",
+        "buttonBackgroundHex": "#F50057",
+        "buttonTextHex": "#FFFFFF",
+        "accentHex": "#FF80AB"
+    },
+    {
+        "id": "E3000000-AAAA-BBBB-CCCC-DDDD33330013",
+        "name": "Lava",
+        "backgroundHex": "#4A0000",
+        "textHex": "#FFFFFF",
+        "buttonBackgroundHex": "#BF360C",
+        "buttonTextHex": "#FFFFFF",
+        "accentHex": "#FF3D00"
+    },
+    {
+        "id": "E3000000-AAAA-BBBB-CCCC-DDDD33330014",
+        "name": "Cosmic",
+        "background": {
+            "type": "linear",
+            "colors": [
+                "#0F0C29",
+                "#302B63",
+                "#24243E"
+            ]
+        },
+        "textHex": "#FFFFFF",
+        "buttonBackgroundHex": "#512DA8",
+        "buttonTextHex": "#FFFFFF",
+        "accentHex": "#7C4DFF"
+    }
+]
