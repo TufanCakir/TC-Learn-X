@@ -5,7 +5,7 @@
       "description": "Erfahre, wie Optionals in Swift funktionieren und wie man sie sicher entpackt.",
       "steps": ["Deklariere eine optionale Variable","Überprüfe mit if let","Nutze optional chaining"],
       "colors": {
-        "backgroundColors": ["#FF9500", "#FF3B30"],
+        "backgroundColors": ["#000000", "#FF6D2D", "#000000"],
         "textColors": ["#FFFFFF"]
       },
       "code": "var name: String? = \"Tufan\"\nif let unwrapped = name { print(unwrapped) }",
@@ -144,7 +144,7 @@
         "description": "Lerne, wie du Zustände und Bindings in SwiftUI benutzt, um Views reaktiv zu machen.",
         "steps": ["Erstelle eine @State Variable", "Nutze $Variable für Bindings", "Teste Live-Updates im Preview"],
         "colors": {
-          "backgroundColors": ["#007AFF", "#34C759"],
+          "backgroundColors": ["#000000", "#0000FF", "000000"],
           "textColors": ["#FFFFFF"]
         },
         "code": "struct ContentView: View {\n @State private var name = \"\" \n var body: some View { TextField(\"Name\", text: $name) } }",
@@ -537,5 +537,59 @@
     "code": "import SwiftUI\nimport Charts\n\nstruct Sales: Identifiable {\n    let id = UUID()\n    let month: String\n    let amount: Double\n}\n\nstruct ChartsExampleView: View {\n    let data = [\n        Sales(month: \"Jan\", amount: 120),\n        Sales(month: \"Feb\", amount: 200),\n        Sales(month: \"Mär\", amount: 150)\n    ]\n\n    var body: some View {\n        Chart(data) { item in\n            BarMark(\n                x: .value(\"Monat\", item.month),\n                y: .value(\"Verkäufe\", item.amount)\n            )\n            .foregroundStyle(.orange)\n        }\n        .frame(height: 300)\n        .padding()\n    }\n}\n\n#Preview {\n    ChartsExampleView()\n}",
     "category": "SwiftUI",
     "categoryIcon": "swift",
-  }
+  },
+    {
+      "id": "generics_001",
+      "title": "Generics verstehen",
+      "description": "Nutze Generics, um Funktionen und Typen für verschiedene Datentypen wiederverwendbar zu machen.",
+      "steps": [
+        "Funktion mit Platzhalter-Typ <T> definieren.",
+        "Mit beliebigen Datentypen aufrufen.",
+        "Sichert Typprüfung und vermeidet Code-Duplikate."
+      ],
+      "colors": {
+        "backgroundColors": ["#000000", "#BF5AF2", "#000000"],
+        "textColors": ["#FFFFFF"]
+      },
+      "code": "func swapValues<T>(_ a: inout T, _ b: inout T) {\n    let temp = a\n    a = b\n    b = temp\n}\n\nvar x = 5\nvar y = 10\nswapValues(&x, &y)\nprint(x, y) // 10 5",
+      "category": "Swift",
+      "categoryIcon": "swift",
+      "categoryIconColor": "#BF5AF2"
+    },
+    {
+      "id": "observableobject_001",
+      "title": "ObservableObject & @Published",
+      "description": "Baue reaktive ViewModels, die automatisch UI-Updates triggern, wenn sich Daten ändern.",
+      "steps": [
+        "Klasse mit ObservableObject-Protokoll erstellen.",
+        "@Published für veränderliche Properties verwenden.",
+        "View mit @StateObject oder @ObservedObject verbinden."
+      ],
+      "colors": {
+        "backgroundColors": ["#000000", "#0A84FF", "#000000"],
+        "textColors": ["#FFFFFF"]
+      },
+      "code": "import SwiftUI\n\nclass CounterViewModel: ObservableObject {\n    @Published var count = 0\n    func increment() { count += 1 }\n}\n\nstruct CounterView: View {\n    @StateObject private var vm = CounterViewModel()\n\n    var body: some View {\n        VStack(spacing: 20) {\n            Text(\"Zähler: \\(vm.count)\")\n                .font(.largeTitle)\n            Button(\"+1\") { vm.increment() }\n                .buttonStyle(.borderedProminent)\n        }\n    }\n}\n\n#Preview { CounterView() }",
+      "category": "SwiftUI",
+      "categoryIcon": "swift",
+      "categoryIconColor": "#0A84FF"
+    },
+    {
+      "id": "matchedgeometryeffect_001",
+      "title": "MatchedGeometryEffect Animation",
+      "description": "Erstelle sanfte Übergänge zwischen Views, z. B. für Karten oder Detailansichten.",
+      "steps": [
+        "Namespace für Animation anlegen.",
+        "matchedGeometryEffect(id:, in:) in beiden Views nutzen.",
+        "Mit Animation beim State-Wechsel arbeiten."
+      ],
+      "colors": {
+        "backgroundColors": ["#000000", "#FF2D55", "#000000"],
+        "textColors": ["#FFFFFF"]
+      },
+      "code": "import SwiftUI\n\nstruct MatchedGeometryExampleView: View {\n    @Namespace private var ns\n    @State private var expanded = false\n\n    var body: some View {\n        VStack {\n            if expanded {\n                RoundedRectangle(cornerRadius: 25)\n                    .fill(.pink)\n                    .matchedGeometryEffect(id: \"card\", in: ns)\n                    .frame(width: 300, height: 300)\n            } else {\n                RoundedRectangle(cornerRadius: 25)\n                    .fill(.pink)\n                    .matchedGeometryEffect(id: \"card\", in: ns)\n                    .frame(width: 100, height: 100)\n            }\n        }\n        .onTapGesture {\n            withAnimation(.spring()) { expanded.toggle() }\n        }\n    }\n}\n\n#Preview { MatchedGeometryExampleView() }",
+      "category": "SwiftUI",
+      "categoryIcon": "swift",
+      "categoryIconColor": "#FF2D55"
+    }
 ]

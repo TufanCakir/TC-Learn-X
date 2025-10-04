@@ -106,7 +106,7 @@ private extension LearningListView {
                         .background(selectedCategory == category
                                     ? (currentTheme?.accent ?? .blue).opacity(0.85)
                                     : Color.secondary.opacity(0.2))
-                        .foregroundColor(selectedCategory == category ? .white : .primary)
+                        .foregroundColor(selectedCategory == category ? .black : .white)
                         .cornerRadius(8)
                     }
                 }
