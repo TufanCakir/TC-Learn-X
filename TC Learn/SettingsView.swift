@@ -11,8 +11,8 @@ enum AppAppearance: String, CaseIterable, Identifiable {
     var colorScheme: ColorScheme? {
         switch self {
         case .system: return nil
-        case .light: return .light
-        case .dark: return .dark
+        case .light:  return .light
+        case .dark:   return .dark
         }
     }
 
@@ -29,6 +29,9 @@ struct SettingsView: View {
     @Environment(\.requestReview) private var requestReview
     @AppStorage("appAppearance") private var appearanceRaw = AppAppearance.system.rawValue
 
+    @Environment(\.horizontalSizeClass) private var sizeClass
+    @Environment(\.dynamicTypeSize) private var dynamicType
+
     private var appearance: AppAppearance {
         get { AppAppearance(rawValue: appearanceRaw) ?? .system }
         set { appearanceRaw = newValue.rawValue }
@@ -42,13 +45,14 @@ struct SettingsView: View {
                     Picker("App-Darstellung", selection: $appearanceRaw) {
                         ForEach(AppAppearance.allCases) { mode in
                             Label(mode.rawValue, systemImage: mode.icon)
+                                .font(.system(size: fontSizeBase))
                                 .tag(mode.rawValue)
                         }
                     }
                     .pickerStyle(.inline)
                 } header: {
                     Text("Darstellung")
-                        .font(.headline)
+                        .font(.system(size: fontSizeHeadline, weight: .semibold))
                         .foregroundStyle(.secondary)
                 }
 
@@ -57,49 +61,73 @@ struct SettingsView: View {
                     Button {
                         requestReview()
                     } label: {
-                        HStack {
+                        HStack(spacing: 10) {
                             Image(systemName: "star.fill")
                                 .foregroundColor(.yellow)
+                                .font(.system(size: iconSize))
                             Text("App bewerten (In-App)")
                                 .foregroundColor(.primary)
+                                .font(.system(size: fontSizeBase))
                         }
+                        .padding(.vertical, buttonPadding)
                     }
 
                     Button {
                         openAppStoreReviewPage()
                     } label: {
-                        HStack {
+                        HStack(spacing: 10) {
                             Image(systemName: "link")
                                 .foregroundColor(.blue)
+                                .font(.system(size: iconSize))
                             Text("Im App Store bewerten")
                                 .foregroundColor(.primary)
+                                .font(.system(size: fontSizeBase))
                         }
+                        .padding(.vertical, buttonPadding)
                     }
                 } header: {
                     Text("Feedback")
-                        .font(.headline)
+                        .font(.system(size: fontSizeHeadline, weight: .semibold))
                         .foregroundStyle(.secondary)
                 }
             }
-            .scrollContentBackground(.hidden) // moderner Look
+            .scrollContentBackground(.hidden)
             .background(
                 LinearGradient(
                     colors: [.black.opacity(0.1), .clear],
                     startPoint: .top,
                     endPoint: .bottom
                 )
+                .ignoresSafeArea()
             )
             .navigationTitle("Einstellungen")
+            .navigationBarTitleDisplayMode(.inline)
         }
         .preferredColorScheme(AppAppearance(rawValue: appearanceRaw)?.colorScheme)
     }
 
-    // MARK: - App Store Review Page öffnen (Fallback)
+    // MARK: - App Store Review Page öffnen
     private func openAppStoreReviewPage() {
-        let appID = "6753212783" // Deine echte App ID hier
+        let appID = "6753212783" // Deine echte App-ID
         if let url = URL(string: "https://apps.apple.com/app/id\(appID)?action=write-review") {
             UIApplication.shared.open(url)
         }
+    }
+}
+
+// MARK: - Dynamische Größen
+private extension SettingsView {
+    var fontSizeHeadline: CGFloat {
+        sizeClass == .regular ? 22 : 18
+    }
+    var fontSizeBase: CGFloat {
+        sizeClass == .regular ? 18 : 16
+    }
+    var iconSize: CGFloat {
+        sizeClass == .regular ? 20 : 16
+    }
+    var buttonPadding: CGFloat {
+        sizeClass == .regular ? 8 : 4
     }
 }
 

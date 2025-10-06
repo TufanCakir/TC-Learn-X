@@ -7,6 +7,10 @@ struct RootTabView: View {
     // MARK: - Themes
     @State private var themes: [LearnTheme] = []
     @State private var selectedTheme: LearnTheme?
+    @State private var isLoadingThemes = true
+
+    // MARK: - Environment
+    @Environment(\.horizontalSizeClass) private var sizeClass
 
     var body: some View {
         TabView {
@@ -15,19 +19,23 @@ struct RootTabView: View {
                 LearningListView()
             }
             .tabItem {
-                Label("Rechner", systemImage: "plus.slash.minus")
+                Label("Lernen", systemImage: "pencil")
+                    .font(.system(size: tabFontSize, weight: .semibold))
             }
 
             // ✅ Tab 2: Themes
             NavigationStack {
-                if themes.isEmpty {
+                if isLoadingThemes {
                     ProgressView("Lade Themes …")
+                        .font(.system(size: tabFontSize))
+                        .padding()
                 } else {
                     ThemePickerScreen(themes: themes)
                 }
             }
             .tabItem {
                 Label("Themes", systemImage: "paintpalette.fill")
+                    .font(.system(size: tabFontSize, weight: .semibold))
             }
 
             // ✅ Tab 3: Einstellungen
@@ -35,7 +43,8 @@ struct RootTabView: View {
                 SettingsView()
             }
             .tabItem {
-                Label("Einstellungen", systemImage: "gearshape.fill")
+                Label("Einstellungen", systemImage: "gear")
+                    .font(.system(size: tabFontSize, weight: .semibold))
             }
         }
         .preferredColorScheme(AppAppearance(rawValue: appearanceRaw)?.colorScheme)
@@ -49,10 +58,16 @@ struct RootTabView: View {
         let loaded = loadLearnThemes()
         await MainActor.run {
             self.themes = loaded
-            if selectedTheme == nil {
-                self.selectedTheme = loaded.first
-            }
+            self.selectedTheme = loaded.first
+            self.isLoadingThemes = false
         }
+    }
+}
+
+// MARK: - Dynamische Größen
+private extension RootTabView {
+    var tabFontSize: CGFloat {
+        sizeClass == .regular ? 16 : 14
     }
 }
 
