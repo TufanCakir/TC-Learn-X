@@ -591,5 +591,275 @@
       "category": "SwiftUI",
       "categoryIcon": "swift",
       "categoryIconColor": "#FF2D55"
-    }
-]
+    },
+      {
+        "id": "observableobject_002",
+        "title": "EnvironmentObject verstehen",
+        "description": "Teile ein ViewModel über mehrere Views hinweg, ohne es manuell weiterzugeben.",
+        "steps": [
+          "Ein ViewModel mit ObservableObject erstellen.",
+          "Es im obersten View mit .environmentObject() einfügen.",
+          "In untergeordneten Views mit @EnvironmentObject darauf zugreifen."
+        ],
+        "colors": {
+          "backgroundColors": ["#000000", "#30D158", "#000000"],
+          "textColors": ["#FFFFFF"]
+        },
+        "code": "import SwiftUI\n\nclass UserSettings: ObservableObject {\n    @Published var username = \"Gast\"\n}\n\nstruct RootView: View {\n    @StateObject private var settings = UserSettings()\n\n    var body: some View {\n        NavigationStack {\n            VStack(spacing: 20) {\n                TextField(\"Name\", text: $settings.username)\n                    .textFieldStyle(.roundedBorder)\n                    .padding()\n                NavigationLink(\"Zur Profilseite\", destination: ProfileView())\n            }\n        }\n        .environmentObject(settings)\n    }\n}\n\nstruct ProfileView: View {\n    @EnvironmentObject var settings: UserSettings\n\n    var body: some View {\n        Text(\"Willkommen, \\(settings.username)!\")\n            .font(.largeTitle)\n    }\n}\n\n#Preview { RootView() }",
+        "category": "SwiftUI",
+        "categoryIcon": "swift",
+        "categoryIconColor": "#30D158"
+      },
+      {
+        "id": "asyncawait_001",
+        "title": "Async / Await & Concurrency",
+        "description": "Lerne, wie du asynchrone Aufgaben in Swift mit async/await modern und sicher schreibst.",
+        "steps": [
+          "Mit async Funktionen erstellen, die await verwenden.",
+          "Daten mit URLSession laden.",
+          "Fehler mit do-catch behandeln."
+        ],
+        "colors": {
+          "backgroundColors": ["#000000", "#0A84FF", "#000000"],
+          "textColors": ["#FFFFFF"]
+        },
+        "code": "import SwiftUI\n\nstruct AsyncAwaitExampleView: View {\n    @State private var joke = \"Lade Witz...\"\n\n    var body: some View {\n        VStack(spacing: 20) {\n            Text(joke)\n                .multilineTextAlignment(.center)\n                .padding()\n\n            Button(\"Neuen Witz laden\") {\n                Task { await loadJoke() }\n            }\n            .buttonStyle(.borderedProminent)\n        }\n        .padding()\n    }\n\n    func loadJoke() async {\n        guard let url = URL(string: \"https://official-joke-api.appspot.com/random_joke\") else { return }\n        do {\n            let (data, _) = try await URLSession.shared.data(from: url)\n            if let decoded = try? JSONDecoder().decode(Joke.self, from: data) {\n                joke = \"\\(decoded.setup)\\n\\n💬 \\(decoded.punchline)\"\n            }\n        } catch {\n            joke = \"Fehler beim Laden 😅\"\n        }\n    }\n}\n\nstruct Joke: Codable {\n    let setup: String\n    let punchline: String\n}\n\n#Preview { AsyncAwaitExampleView() }",
+        "category": "Swift",
+        "categoryIcon": "swift",
+        "categoryIconColor": "#0A84FF"
+      },
+      {
+        "id": "timelineview_001",
+        "title": "TimelineView (Live-Updates)",
+        "description": "Erstelle Views, die automatisch in Intervallen oder bei jeder Frame-Aktualisierung neu gerendert werden.",
+        "steps": [
+          "TimelineView importieren und Typ auswählen (z. B. Animation).",
+          "Den aktuellen Zeitpunkt in der View verwenden.",
+          "Ideal für Timer, Uhren oder Animationen."
+        ],
+        "colors": {
+          "backgroundColors": ["#000000", "#FF9F0A", "#000000"],
+          "textColors": ["#FFFFFF"]
+        },
+        "code": "import SwiftUI\n\nstruct TimelineClockView: View {\n    var body: some View {\n        TimelineView(.animation) { context in\n            VStack(spacing: 20) {\n                Text(context.date, style: .time)\n                    .font(.largeTitle)\n                    .monospacedDigit()\n\n                Circle()\n                    .trim(from: 0, to: CGFloat(Calendar.current.component(.second, from: context.date)) / 60)\n                    .stroke(.orange, style: StrokeStyle(lineWidth: 8, lineCap: .round))\n                    .frame(width: 120, height: 120)\n                    .rotationEffect(.degrees(-90))\n                    .animation(.easeInOut, value: context.date)\n            }\n            .padding()\n        }\n    }\n}\n\n#Preview { TimelineClockView() }",
+        "category": "SwiftUI",
+        "categoryIcon": "swift",
+        "categoryIconColor": "#FF9F0A"
+      },
+        {
+          "id": "debugging_001",
+          "title": "Debugging & Print Statements",
+          "description": "Lerne, wie du deinen Code mit print(), dump() und Debugging-Werkzeugen besser verstehst.",
+          "steps": [
+            "Nutze print() für einfache Ausgaben in der Konsole.",
+            "Mit dump() kannst du komplexe Objekte anzeigen.",
+            "Verwende #file, #line und #function für genaue Fehlersuche."
+          ],
+          "colors": {
+            "backgroundColors": ["#000000", "#0A84FF", "#000000"],
+            "textColors": ["#FFFFFF"]
+          },
+          "code": "struct User {\n    var name: String\n    var level: Int\n}\n\nlet player = User(name: \"Tufan\", level: 42)\n\nprint(\"🧠 Spielername:\", player.name)\ndump(player)\n\nfunc logMessage(_ message: String, file: String = #file, line: Int = #line, function: String = #function) {\n    print(\"[LOG] \\(message) — in \\(function) (Zeile \\(line))\")\n}\n\nlogMessage(\"Spiel gestartet\")",
+          "category": "Swift",
+          "categoryIcon": "terminal",
+          "categoryIconColor": "#0A84FF"
+        },
+        {
+          "id": "errorhandling_002",
+          "title": "Bug Fix & Fehlerbehandlung",
+          "description": "So gehst du mit Fehlern um, findest Bugs und verhinderst Abstürze mit do-catch und guard.",
+          "steps": [
+            "Erstelle eigene Error-Typen.",
+            "Nutze do-try-catch für Fehlerbehandlung.",
+            "Verwende guard let, um Fehler frühzeitig abzufangen."
+          ],
+          "colors": {
+            "backgroundColors": ["#000000", "#FF3B30", "#000000"],
+            "textColors": ["#FFFFFF"]
+          },
+          "code": "enum LoginError: Error {\n    case emptyUsername\n    case wrongPassword\n}\n\nfunc login(username: String, password: String) throws {\n    guard !username.isEmpty else { throw LoginError.emptyUsername }\n    guard password == \"1234\" else { throw LoginError.wrongPassword }\n    print(\"✅ Willkommen, \\(username)\")\n}\n\ndo {\n    try login(username: \"Tufan\", password: \"0000\")\n} catch LoginError.emptyUsername {\n    print(\"❌ Kein Benutzername angegeben.\")\n} catch LoginError.wrongPassword {\n    print(\"🚫 Falsches Passwort.\")\n} catch {\n    print(\"🔴 Unbekannter Fehler: \\(error)\")\n}",
+          "category": "Swift",
+          "categoryIcon": "ant.fill",
+          "categoryIconColor": "#FF3B30"
+        },
+        {
+          "id": "logging_001",
+          "title": "Besseres Logging mit Date und Levels",
+          "description": "Organisiere Log-Ausgaben mit Zeitstempel und Level (Info, Warnung, Fehler).",
+          "steps": [
+            "Definiere ein LogLevel-Enum mit verschiedenen Stufen.",
+            "Erstelle eine Funktion, die Zeitstempel und Nachricht kombiniert.",
+            "Nutze switch, um je nach Level farbige Symbole anzuzeigen."
+          ],
+          "colors": {
+            "backgroundColors": ["#000000", "#FF9500", "#000000"],
+            "textColors": ["#FFFFFF"]
+          },
+          "code": "import Foundation\n\nenum LogLevel: String {\n    case info = \"ℹ️\"\n    case warning = \"⚠️\"\n    case error = \"🛑\"\n}\n\nfunc log(_ message: String, level: LogLevel = .info) {\n    let date = ISO8601DateFormatter().string(from: Date())\n    print(\"\\(level.rawValue) [\\(date)] - \\(message)\")\n}\n\nlog(\"App gestartet\", level: .info)\nlog(\"Verbindung langsam\", level: .warning)\nlog(\"Server nicht erreichbar\", level: .error)",
+          "category": "Swift",
+          "categoryIcon": "ant.circle.fill",
+          "categoryIconColor": "#FF9500"
+        },
+          {
+            "id": "profiling_001",
+            "title": "Performance messen mit Zeitstempel",
+            "description": "Miss die Ausführungszeit deines Codes mit CFAbsoluteTime und analysiere langsame Funktionen.",
+            "steps": [
+              "Verwende CFAbsoluteTimeGetCurrent(), um Start- und Endzeit zu erfassen.",
+              "Berechne die Differenz, um die Laufzeit in Sekunden zu erhalten.",
+              "Perfekt zum Profilen von Loops oder Netzwerkoperationen."
+            ],
+            "colors": {
+              "backgroundColors": ["#000000", "#30D158", "#000000"],
+              "textColors": ["#FFFFFF"]
+            },
+            "code": "import Foundation\n\nlet startTime = CFAbsoluteTimeGetCurrent()\n\n// Beispiel: Aufwändige Schleife\nvar result = 0\nfor i in 0..<1_000_000 {\n    result += i\n}\n\nlet endTime = CFAbsoluteTimeGetCurrent()\nlet elapsed = endTime - startTime\n\nprint(\"✅ Ergebnis: \\(result)\")\nprint(String(format: \"⏱ Laufzeit: %.5f Sekunden\", elapsed))",
+            "category": "Swift",
+            "categoryIcon": "gauge",
+            "categoryIconColor": "#30D158"
+          },
+          {
+            "id": "benchmark_001",
+            "title": "Array vs Set Benchmark",
+            "description": "Vergleiche die Geschwindigkeit von Array- und Set-Suchen, um Datenstrukturen besser zu verstehen.",
+            "steps": [
+              "Erstelle ein großes Array und ein Set mit denselben Elementen.",
+              "Suche einen bestimmten Wert mit contains().",
+              "Miss die Zeit für beide Strukturen – Sets sind meist deutlich schneller."
+            ],
+            "colors": {
+              "backgroundColors": ["#000000", "#0A84FF", "#000000"],
+              "textColors": ["#FFFFFF"]
+            },
+            "code": "import Foundation\n\nlet numbers = Array(0...1_000_000)\nlet numberSet = Set(numbers)\n\nlet target = 999_999\n\nlet startArray = CFAbsoluteTimeGetCurrent()\nlet _ = numbers.contains(target)\nlet endArray = CFAbsoluteTimeGetCurrent()\n\nlet startSet = CFAbsoluteTimeGetCurrent()\nlet _ = numberSet.contains(target)\nlet endSet = CFAbsoluteTimeGetCurrent()\n\nprint(String(format: \"🔍 Array-Suche: %.5f s\", endArray - startArray))\nprint(String(format: \"⚡️ Set-Suche: %.5f s\", endSet - startSet))",
+            "category": "Swift",
+            "categoryIcon": "speedometer",
+            "categoryIconColor": "#0A84FF"
+          },
+          {
+            "id": "memory_001",
+            "title": "Struct vs Class Performance",
+            "description": "Verstehe den Unterschied zwischen Value Types (Structs) und Reference Types (Classes) in Bezug auf Speicher und Kopien.",
+            "steps": [
+              "Erstelle ein Struct und eine Class mit denselben Properties.",
+              "Teste Kopierverhalten und Speichernutzung.",
+              "Structs werden kopiert, Classes referenziert – das beeinflusst Performance."
+            ],
+            "colors": {
+              "backgroundColors": ["#000000", "#FF9500", "#000000"],
+              "textColors": ["#FFFFFF"]
+            },
+            "code": "import Foundation\n\nstruct PlayerStruct {\n    var name: String\n    var score: Int\n}\n\nclass PlayerClass {\n    var name: String\n    var score: Int\n    init(name: String, score: Int) {\n        self.name = name\n        self.score = score\n    }\n}\n\nvar structA = PlayerStruct(name: \"Tufan\", score: 100)\nvar structB = structA // Kopie\nstructB.score = 200\nprint(\"Struct A Score: \\(structA.score) – Struct B Score: \\(structB.score)\")\n\nlet classA = PlayerClass(name: \"Tufan\", score: 100)\nlet classB = classA // Referenz\nclassB.score = 200\nprint(\"Class A Score: \\(classA.score) – Class B Score: \\(classB.score)\")",
+            "category": "Swift",
+            "categoryIcon": "memorychip",
+            "categoryIconColor": "#FF9500"
+          },
+            {
+              "id": "cli_001",
+              "title": "Kommandozeilenargumente lesen",
+              "description": "Lerne, wie du Eingaben aus der Konsole mit CommandLine.arguments verarbeitest, um interaktive Tools zu erstellen.",
+              "steps": [
+                "Verwende CommandLine.arguments, um übergebene Parameter zu erhalten.",
+                "Überprüfe die Anzahl der Argumente mit count.",
+                "Nutze diese Eingaben, um dein Programm dynamisch zu steuern."
+              ],
+              "colors": {
+                "backgroundColors": ["#000000", "#0A84FF", "#000000"],
+                "textColors": ["#FFFFFF"]
+              },
+              "code": "import Foundation\n\nlet args = CommandLine.arguments\n\nif args.count < 2 {\n    print(\"⚙️ Nutzung: swift main.swift <Name>\")\n} else {\n    let name = args[1]\n    print(\"👋 Hallo, \\(name)! Willkommen in Swift CLI!\")\n}",
+              "category": "Swift",
+              "categoryIcon": "terminal",
+              "categoryIconColor": "#0A84FF"
+            },
+            {
+              "id": "cli_002",
+              "title": "Dateien lesen & schreiben",
+              "description": "Speichere und lade Textdateien in der Konsole, um einfache CLI-Tools zu erstellen.",
+              "steps": [
+                "Nutze FileManager oder write(to:) zum Schreiben.",
+                "Verwende String(contentsOfFile:) zum Lesen.",
+                "Fehler mit do-try-catch behandeln, um Abstürze zu vermeiden."
+              ],
+              "colors": {
+                "backgroundColors": ["#000000", "#30D158", "#000000"],
+                "textColors": ["#FFFFFF"]
+              },
+              "code": "import Foundation\n\nlet fileURL = URL(fileURLWithPath: \"output.txt\")\nlet text = \"🚀 Swift CLI schreibt in Dateien!\"\n\ndo {\n    try text.write(to: fileURL, atomically: true, encoding: .utf8)\n    let content = try String(contentsOf: fileURL)\n    print(\"📄 Dateiinhalt: \\n\\(content)\")\n} catch {\n    print(\"❌ Fehler beim Datei-Zugriff: \\(error)\")\n}",
+              "category": "Swift",
+              "categoryIcon": "doc.text.fill",
+              "categoryIconColor": "#30D158"
+            },
+            {
+              "id": "cli_003",
+              "title": "JSON verarbeiten in der Konsole",
+              "description": "Erstelle ein Swift-Tool, das JSON-Dateien liest, decodiert und formatiert ausgibt.",
+              "steps": [
+                "Definiere eine Codable-Struktur, die das JSON-Schema abbildet.",
+                "Nutze JSONDecoder, um die Datei in Swift-Objekte umzuwandeln.",
+                "Verwende JSONEncoder, um lesbare JSON-Strings zu erzeugen."
+              ],
+              "colors": {
+                "backgroundColors": ["#000000", "#FF9500", "#000000"],
+                "textColors": ["#FFFFFF"]
+              },
+              "code": "import Foundation\n\nstruct User: Codable {\n    let name: String\n    let age: Int\n}\n\nlet jsonString = \"\"\"{\n    \\\"name\\\": \\\"Tufan\\\",\n    \\\"age\\\": 30\n}\"\"\"\n\nlet data = Data(jsonString.utf8)\n\nif let user = try? JSONDecoder().decode(User.self, from: data) {\n    print(\"✅ Name: \\(user.name), Alter: \\(user.age)\")\n}\n\nif let jsonData = try? JSONEncoder().encode(user),\n   let jsonString = String(data: jsonData, encoding: .utf8) {\n    print(\"\\n📦 JSON Ausgabe:\\n\\(jsonString)\")\n}",
+              "category": "Swift",
+              "categoryIcon": "square.and.arrow.down",
+              "categoryIconColor": "#FF9500"
+            },
+              {
+                "id": "networking_001",
+                "title": "Einfache API-Abfrage mit URLSession",
+                "description": "Lerne, wie du mit URLSession Daten aus dem Internet abrufst und in Swift verwendest.",
+                "steps": [
+                  "Erstelle eine URL und starte eine URLSession dataTask.",
+                  "Verarbeite die empfangenen Daten als String oder JSON.",
+                  "Nutze do-try-catch für sauberes Fehlerhandling."
+                ],
+                "colors": {
+                  "backgroundColors": ["#000000", "#0A84FF", "#000000"],
+                  "textColors": ["#FFFFFF"]
+                },
+                "code": "import Foundation\n\nguard let url = URL(string: \"https://jsonplaceholder.typicode.com/posts/1\") else {\n    fatalError(\"❌ Ungültige URL\")\n}\n\nlet task = URLSession.shared.dataTask(with: url) { data, _, error in\n    if let error = error {\n        print(\"🚫 Fehler: \\(error)\")\n        return\n    }\n    if let data = data, let text = String(data: data, encoding: .utf8) {\n        print(\"✅ Antwort:\\n\\(text)\")\n    }\n}\n\ntask.resume()\n\nRunLoop.main.run() // Für CLI-Programme nötig",
+                "category": "Swift",
+                "categoryIcon": "network",
+                "categoryIconColor": "#0A84FF"
+              },
+              {
+                "id": "networking_002",
+                "title": "API mit Codable & JSONDecoder",
+                "description": "Lade Daten aus einer API und dekodiere sie direkt in Swift-Strukturen mit Codable.",
+                "steps": [
+                  "Definiere ein Datenmodell mit Codable.",
+                  "Dekodiere das empfangene JSON mit JSONDecoder.",
+                  "Verarbeite die Daten im Completion Handler."
+                ],
+                "colors": {
+                  "backgroundColors": ["#000000", "#30D158", "#000000"],
+                  "textColors": ["#FFFFFF"]
+                },
+                "code": "import Foundation\n\nstruct Post: Codable {\n    let id: Int\n    let title: String\n    let body: String\n}\n\nguard let url = URL(string: \"https://jsonplaceholder.typicode.com/posts/1\") else {\n    fatalError(\"❌ Ungültige URL\")\n}\n\nURLSession.shared.dataTask(with: url) { data, _, error in\n    guard let data = data else { return }\n    do {\n        let post = try JSONDecoder().decode(Post.self, from: data)\n        print(\"📝 Titel: \\(post.title)\")\n        print(\"💬 Inhalt: \\(post.body)\")\n    } catch {\n        print(\"🚫 JSON-Fehler: \\(error)\")\n    }\n}.resume()\n\nRunLoop.main.run()",
+                "category": "Swift",
+                "categoryIcon": "cloud.fill",
+                "categoryIconColor": "#30D158"
+              },
+              {
+                "id": "networking_003",
+                "title": "Async/Await API-Call mit Swift Concurrency",
+                "description": "Verwende async/await für moderne, saubere API-Aufrufe mit Swift Concurrency.",
+                "steps": [
+                  "Deklariere eine asynchrone Funktion mit async throws.",
+                  "Nutze URLSession.shared.data(from:) für den API-Call.",
+                  "Dekodiere die Daten mit JSONDecoder im modernen Stil."
+                ],
+                "colors": {
+                  "backgroundColors": ["#000000", "#FF9500", "#000000"],
+                  "textColors": ["#FFFFFF"]
+                },
+                "code": "import Foundation\n\nstruct User: Codable {\n    let id: Int\n    let name: String\n    let email: String\n}\n\nfunc fetchUser() async throws {\n    let url = URL(string: \"https://jsonplaceholder.typicode.com/users/1\")!\n    let (data, _) = try await URLSession.shared.data(from: url)\n    let user = try JSONDecoder().decode(User.self, from: data)\n    print(\"👤 Nutzer: \\(user.name) – 📧 \\(user.email)\")\n}\n\nTask {\n    do {\n        try await fetchUser()\n    } catch {\n        print(\"🚫 Fehler: \\(error)\")\n    }\n}\n\nRunLoop.main.run()",
+                "category": "Swift",
+                "categoryIcon": "bolt.horizontal.circle.fill",
+                "categoryIconColor": "#FF9500"
+              }
+            ]
